@@ -125,45 +125,69 @@
                 </div>
                 <div class="kpi-card p-6 rounded-lg">
                     <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Indicadores de Performance</h3>
-                    <div class="space-y-2" id="indicadores-accordion">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                         <!-- Citações -->
-                        <div class="border border-gray-600 rounded-lg overflow-hidden">
-                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-citacoes-wrapper">
-                                <span>Citações Realizadas</span>
-                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </button>
-                            <div id="chart-citacoes-wrapper" class="hidden p-4 bg-gray-900">
-                                <div class="chart-wrapper h-64"><canvas id="chartCitacoes"></canvas></div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-center mb-3 text-gray-300">Citações Realizadas</h4>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div>
+                                    <p class="text-3xl font-bold">34</p>
+                                    <p class="text-sm text-gray-400">Quantidade</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-red-400">25</p>
+                                    <p class="text-sm text-gray-400">Tempo Médio</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-green-400">R$7.4k</p>
+                                    <p class="text-sm text-gray-400">Retorno</p>
+                                </div>
                             </div>
                         </div>
                         <!-- Penhoras -->
-                         <div class="border border-gray-600 rounded-lg overflow-hidden">
-                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-penhoras-wrapper">
-                                <span>Penhoras e Bloqueios</span>
-                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </button>
-                            <div id="chart-penhoras-wrapper" class="hidden p-4 bg-gray-900">
-                                <div class="chart-wrapper h-64"><canvas id="chartPenhoras"></canvas></div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-center mb-3 text-gray-300">Penhoras e Bloqueios</h4>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div>
+                                    <p class="text-3xl font-bold">2</p>
+                                    <p class="text-sm text-gray-400">Quantidade</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-red-400">32</p>
+                                    <p class="text-sm text-gray-400">Tempo Médio</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-green-400">R$1.8k</p>
+                                    <p class="text-sm text-gray-400">Retorno</p>
+                                </div>
                             </div>
                         </div>
                         <!-- Encerrados -->
-                         <div class="border border-gray-600 rounded-lg overflow-hidden">
-                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-encerrados-wrapper">
-                                <span>Encerrados</span>
-                               <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </button>
-                            <div id="chart-encerrados-wrapper" class="hidden p-4 bg-gray-900">
-                                <div class="chart-wrapper h-64"><canvas id="chartEncerrados"></canvas></div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-center mb-3 text-gray-300">Encerrados</h4>
+                            <div class="flex justify-around text-center pt-2">
+                                <div>
+                                    <p class="text-3xl font-bold">15</p>
+                                    <p class="text-sm text-gray-400">Quantidade</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-green-400">R$13.7k</p>
+                                    <p class="text-sm text-gray-400">Retorno</p>
+                                </div>
                             </div>
                         </div>
                         <!-- Distribuídos -->
-                         <div class="border border-gray-600 rounded-lg overflow-hidden">
-                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-distribuidos-wrapper">
-                                <span>Recebidos e Distribuídos</span>
-                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </button>
-                            <div id="chart-distribuidos-wrapper" class="hidden p-4 bg-gray-900">
-                                <div class="chart-wrapper h-64"><canvas id="chartDistribuidos"></canvas></div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-center mb-3 text-gray-300">Recebidos e Distribuídos</h4>
+                            <div class="flex justify-around text-center pt-2">
+                                <div>
+                                    <p class="text-3xl font-bold">51</p>
+                                    <p class="text-sm text-gray-400">Quantidade</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-green-400">R$3.5k</p>
+                                    <p class="text-sm text-gray-400">Retorno</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -173,15 +197,20 @@
             <!-- Aba: Produtividade -->
             <div id="produtividade" class="tab-content">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                     <div class="kpi-card p-6 rounded-lg text-center">
+                    <div class="kpi-card p-6 rounded-lg text-center">
                         <h3 class="text-xl font-semibold text-gray-300">Advogados(as) na Equipe</h3>
                         <p class="text-4xl font-bold text-gray-300 mt-2">5</p>
                         <p class="text-gray-400">Equipe ativa</p>
                     </div>
-                     <div class="kpi-card p-6 rounded-lg text-center">
-                        <h3 class="text-xl font-semibold text-gray-300">Total de Prazos em Agosto</h3>
+                    <div id="recebidos-card" class="kpi-card p-6 rounded-lg text-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gray-300">Total Recebido em Agosto</h3>
                         <p class="text-4xl font-bold text-gray-300 mt-2">1335</p>
-                        <p class="text-gray-400">Média: 267 por advogado(a)</p>
+                        <p class="text-gray-400 text-sm">(Clique para ver detalhes)</p>
+                         <div id="recebidos-details" class="hidden mt-2 text-left text-sm transition-all duration-300">
+                            <hr class="border-gray-600 my-2">
+                            <p>Prazos Recebidos: <span class="font-bold float-right">597</span></p>
+                            <p>Compromissos Recebidos: <span class="font-bold float-right">738</span></p>
+                        </div>
                     </div>
                      <div id="reagendamentos-card" class="kpi-card p-6 rounded-lg text-center cursor-pointer">
                         <h3 class="text-xl font-semibold text-gray-300">Reagendamentos</h3>
@@ -189,18 +218,64 @@
                         <p class="text-gray-400">Casos pendentes de Agosto</p>
                     </div>
                 </div>
+
+                <div class="kpi-card p-6 rounded-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Performance de Conclusão - Agosto</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div>
+                            <h4 class="font-semibold text-gray-400">Prazos Concluídos</h4>
+                            <p class="text-3xl font-bold mt-1">562</p>
+                            <p class="text-sm text-green-400">94.1% dos recebidos</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-400">Compromissos Concluídos</h4>
+                            <p class="text-3xl font-bold mt-1">649</p>
+                            <p class="text-sm text-green-400">87.9% dos recebidos</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-400">Total Concluído</h4>
+                            <p class="text-3xl font-bold mt-1">1.211</p>
+                            <p class="text-sm text-gray-400">Prazos + Compromissos</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-400">Concluído vs Base Total</h4>
+                            <p class="text-3xl font-bold mt-1">25.2%</p>
+                            <p class="text-sm text-gray-400">(1.211 de 4.811)</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-start">
                     <div class="kpi-card p-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Volumetria de Atividades</h3>
+                        <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Volumetria de Atividades Recebidas</h3>
                         <div class="chart-wrapper"><canvas id="chartVolumetria"></canvas></div>
                     </div>
-                    <div class="kpi-card p-4 rounded-lg text-center">
-                        <h3 class="text-xl font-semibold text-gray-300">Despachos Realizados</h3>
-                        <p class="text-5xl font-bold text-gray-300 mt-4">30</p>
-                         <hr class="border-gray-600 my-4">
-                        <h3 class="text-xl font-semibold text-gray-300">Sustentações Orais</h3>
-                        <p class="text-5xl font-bold text-gray-300 mt-4">0</p>
-                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Médias e Outras Atividades</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                           <div>
+                               <h4 class="font-semibold text-gray-400">Média Prazos Concluídos</h4>
+                               <p class="text-3xl font-bold mt-1">112</p>
+                               <p class="text-sm text-gray-500">por advogado</p>
+                           </div>
+                            <div>
+                               <h4 class="font-semibold text-gray-400">Média Compromissos Concluídos</h4>
+                               <p class="text-3xl font-bold mt-1">128</p>
+                               <p class="text-sm text-gray-500">por advogado</p>
+                           </div>
+                        </div>
+                        <hr class="border-gray-600 my-4">
+                        <div class="grid grid-cols-2 gap-4">
+                           <div>
+                               <h4 class="font-semibold text-gray-400">Despachos</h4>
+                               <p class="text-3xl font-bold mt-1">30</p>
+                           </div>
+                           <div>
+                               <h4 class="font-semibold text-gray-400">Sustentações Orais</h4>
+                               <p class="text-3xl font-bold mt-1">0</p>
+                           </div>
+                       </div>
+                   </div>
                 </div>
             </div>
 
@@ -338,82 +413,22 @@
                 });
             }
 
+            // Lógica para o card de Recebidos
+            const recebidosCard = document.getElementById('recebidos-card');
+            const recebidosDetails = document.getElementById('recebidos-details');
+            if (recebidosCard && recebidosDetails) {
+                recebidosCard.addEventListener('click', () => {
+                    recebidosDetails.classList.toggle('hidden');
+                });
+            }
+
             // Configurações globais para os gráficos
             Chart.defaults.color = '#cbd5e1';
             Chart.defaults.borderColor = '#4A5568';
             const formatCurrency = (value) => 'R$ ' + value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
             // --- Lógica do Accordion de Indicadores ---
-            const indicatorToggles = document.querySelectorAll('.indicator-toggle');
-            const createdCharts = {};
-
-            const indicatorData = {
-                'chartCitacoes': { title: 'Citações', qtd: 34, valor: 7399.64 },
-                'chartPenhoras': { title: 'Penhoras', qtd: 2, valor: 1825.75 },
-                'chartEncerrados': { title: 'Encerrados', qtd: 15, valor: 13739.58 },
-                'chartDistribuidos': { title: 'Distribuídos', qtd: 51, valor: 3549.11 }
-            };
-
-            const createIndicatorChart = (canvasId, data) => {
-                const ctx = document.getElementById(canvasId).getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Quantidade', 'Retorno Financeiro'],
-                        datasets: [
-                            {
-                                label: 'Quantidade',
-                                data: [data.qtd, 0],
-                                backgroundColor: '#60A5FA', // blue-400
-                                yAxisID: 'yQtd',
-                            },
-                            {
-                                label: 'Retorno Financeiro',
-                                data: [0, data.valor],
-                                backgroundColor: '#4ADE80', // green-400
-                                yAxisID: 'yValor',
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            yQtd: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: 'Quantidade' } },
-                            yValor: { type: 'linear', position: 'right', beginAtZero: true, title: { display: true, text: 'Valor (R$)'}, ticks: { callback: value => 'R$ ' + (value/1000) + 'k' } }
-                        },
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.dataset.label || '';
-                                        if (label === 'Quantidade') return `${label}: ${context.parsed.y}`;
-                                        if (label === 'Retorno Financeiro') return `${label}: ${formatCurrency(context.parsed.y)}`;
-                                        return '';
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            };
-
-            indicatorToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const targetId = toggle.dataset.target;
-                    const targetWrapper = document.getElementById(targetId);
-                    const canvasId = targetWrapper.querySelector('canvas').id;
-                    
-                    toggle.querySelector('svg').classList.toggle('rotate-180');
-                    targetWrapper.classList.toggle('hidden');
-
-                    if (!targetWrapper.classList.contains('hidden') && !createdCharts[canvasId]) {
-                        createIndicatorChart(canvasId, indicatorData[canvasId]);
-                        createdCharts[canvasId] = true;
-                    }
-                });
-            });
+            // Removida a lógica dos gráficos de indicadores conforme solicitado.
 
             // --- Gráfico da Aba "Produtividade" (Volumetria) ---
             const centerTextPlugin = {
@@ -440,7 +455,7 @@
             new Chart(ctxVolumetria, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Prazos', 'Compromissos'],
+                    labels: ['Prazos Recebidos', 'Compromissos Recebidos'],
                     datasets: [{
                         data: [597, 738],
                         backgroundColor: ['#60A5FA', '#A78BFA'], // blue-400 and violet-400
@@ -488,4 +503,3 @@
 
 </body>
 </html>
-
