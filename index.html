@@ -69,11 +69,12 @@
                         <p class="text-4xl font-bold text-amber-400 mt-2">4811</p>
                         <p class="text-gray-400">em 5 clientes</p>
                     </div>
-                    <div class="kpi-card p-6 rounded-lg text-center">
+                    <div id="resultado-financeiro-card" class="kpi-card p-6 rounded-lg text-center cursor-pointer">
                         <h3 class="text-xl font-semibold text-gray-300">RESULTADO FINANCEIRO</h3>
                         <p class="text-4xl font-bold text-green-400 mt-2">R$ 64.859,66</p>
-                        <hr class="border-gray-600 my-3">
-                        <div class="text-xs text-left text-gray-400 space-y-2">
+                        <p class="text-gray-400 text-sm mt-1">(Clique para detalhar)</p>
+                        <div id="resultado-financeiro-details" class="hidden mt-2 text-left text-sm transition-all duration-300">
+                            <hr class="border-gray-600 my-3">
                             <p>
                                 <span class="font-semibold text-gray-300">Honorários de Encerramento:</span> R$ 13.606,34
                                 <br>
@@ -431,6 +432,15 @@
             if (recebidosCard && recebidosDetails) {
                 recebidosCard.addEventListener('click', () => {
                     recebidosDetails.classList.toggle('hidden');
+                });
+            }
+
+            // Lógica para o card de Resultado Financeiro
+            const resultadoCard = document.getElementById('resultado-financeiro-card');
+            const resultadoDetails = document.getElementById('resultado-financeiro-details');
+            if (resultadoCard && resultadoDetails) {
+                resultadoCard.addEventListener('click', () => {
+                    resultadoDetails.classList.toggle('hidden');
                 });
             }
 
