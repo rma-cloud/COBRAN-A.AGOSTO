@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Time Cobrança - Agosto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A202C; /* Tom grafite */
+        }
+        .tab-button.active {
+            border-color: #F87171; /* border-red-400 */
+            color: #FECACA; /* text-red-200 */
+            background-color: #374151; /* bg-gray-700 */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 320px;
+        }
+        .kpi-card {
+            background-color: #2D3748; /* bg-gray-800 adjusted for contrast */
+            border: 1px solid #4A5568; /* border-gray-600 */
+            transition: all 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(248, 113, 113, 0.1), 0 4px 6px -2px rgba(248, 113, 113, 0.05);
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-300">Resultados Time Cobrança</h1>
+            <p class="text-xl text-gray-400 mt-2">Relatório de Desempenho - Agosto</p>
+        </header>
+
+        <!-- Navegação por Abas -->
+        <nav class="flex justify-center border-b border-gray-700 mb-8 flex-wrap">
+            <button class="tab-button text-lg py-4 px-6 font-medium text-gray-400 border-b-2 border-transparent hover:border-red-400 hover:text-white transition active" data-tab="visao-geral">Visão Geral</button>
+            <button class="tab-button text-lg py-4 px-6 font-medium text-gray-400 border-b-2 border-transparent hover:border-red-400 hover:text-white transition" data-tab="metas-resultados">Metas e Resultados</button>
+            <button class="tab-button text-lg py-4 px-6 font-medium text-gray-400 border-b-2 border-transparent hover:border-red-400 hover:text-white transition" data-tab="produtividade">Produtividade</button>
+            <button class="tab-button text-lg py-4 px-6 font-medium text-gray-400 border-b-2 border-transparent hover:border-red-400 hover:text-white transition" data-tab="financeiro">Financeiro</button>
+            <button class="tab-button text-lg py-4 px-6 font-medium text-gray-400 border-b-2 border-transparent hover:border-red-400 hover:text-white transition" data-tab="operacional">Operacional</button>
+            <button class="tab-button text-lg py-4 px-6 font-medium text-gray-400 border-b-2 border-transparent hover:border-red-400 hover:text-white transition" data-tab="desenvolvimento">Desenvolvimento</button>
+        </nav>
+
+        <!-- Conteúdo das Abas -->
+        <main>
+            <!-- Aba: Visão Geral -->
+            <div id="visao-geral" class="tab-content active">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Total de Processos na Base</h3>
+                        <p class="text-4xl font-bold text-amber-400 mt-2">4811</p>
+                        <p class="text-gray-400">em 5 clientes</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Valor Total Recuperado</h3>
+                        <p class="text-4xl font-bold text-green-400 mt-2">R$ 64.859,66</p>
+                        <p class="text-gray-400">Total em Agosto</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Margem de Lucro</h3>
+                        <p class="text-4xl font-bold text-red-500 mt-2">NEGATIVA</p>
+                        <p class="text-gray-400">(- R$ 31.260,42)</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg md:col-span-2 lg:col-span-3">
+                        <h3 class="text-xl font-semibold text-gray-300 text-center mb-4">Processos por Cliente</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+                            <div>
+                                <p class="text-2xl font-bold text-gray-300">4649</p>
+                                <p class="text-gray-400">Banco do Nordeste</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-gray-300">118</p>
+                                <p class="text-gray-400">Tres Corações</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-gray-300">24</p>
+                                <p class="text-gray-400">Turbi</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-gray-300">18</p>
+                                <p class="text-gray-400">Ortobom</p>
+                            </div>
+                            <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                                <p class="text-2xl font-bold text-gray-300">2</p>
+                                <p class="text-gray-400">Carochinha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba: Metas e Resultados -->
+            <div id="metas-resultados" class="tab-content">
+                 <div class="kpi-card p-6 rounded-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-center mb-1 text-gray-300">Metas Internas</h3>
+                    <p class="text-center text-gray-400 mb-4">Os clientes não possuem metas específicas definidas.</p>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                         <div>
+                            <p class="font-medium text-gray-300">Meta de Tempo de Recuperação</p>
+                            <p class="text-2xl font-bold text-green-400">Até 12 meses</p>
+                         </div>
+                         <div>
+                            <p class="font-medium text-gray-300">Média dos Encerrados em Agosto</p>
+                            <p class="text-2xl font-bold text-red-500">22 meses</p>
+                         </div>
+                     </div>
+                </div>
+                <div class="kpi-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Indicadores de Performance</h3>
+                    <div class="space-y-2" id="indicadores-accordion">
+                        <!-- Citações -->
+                        <div class="border border-gray-600 rounded-lg overflow-hidden">
+                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-citacoes-wrapper">
+                                <span>Citações Realizadas</span>
+                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="chart-citacoes-wrapper" class="hidden p-4 bg-gray-900">
+                                <div class="chart-wrapper h-64"><canvas id="chartCitacoes"></canvas></div>
+                            </div>
+                        </div>
+                        <!-- Penhoras -->
+                         <div class="border border-gray-600 rounded-lg overflow-hidden">
+                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-penhoras-wrapper">
+                                <span>Penhoras e Bloqueios</span>
+                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="chart-penhoras-wrapper" class="hidden p-4 bg-gray-900">
+                                <div class="chart-wrapper h-64"><canvas id="chartPenhoras"></canvas></div>
+                            </div>
+                        </div>
+                        <!-- Encerrados -->
+                         <div class="border border-gray-600 rounded-lg overflow-hidden">
+                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-encerrados-wrapper">
+                                <span>Encerrados</span>
+                               <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="chart-encerrados-wrapper" class="hidden p-4 bg-gray-900">
+                                <div class="chart-wrapper h-64"><canvas id="chartEncerrados"></canvas></div>
+                            </div>
+                        </div>
+                        <!-- Distribuídos -->
+                         <div class="border border-gray-600 rounded-lg overflow-hidden">
+                            <button class="w-full text-left p-4 font-semibold text-lg hover:bg-gray-700 transition flex justify-between items-center indicator-toggle" data-target="chart-distribuidos-wrapper">
+                                <span>Recebidos e Distribuídos</span>
+                                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="chart-distribuidos-wrapper" class="hidden p-4 bg-gray-900">
+                                <div class="chart-wrapper h-64"><canvas id="chartDistribuidos"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba: Produtividade -->
+            <div id="produtividade" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                     <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Advogados(as) na Equipe</h3>
+                        <p class="text-4xl font-bold text-gray-300 mt-2">5</p>
+                        <p class="text-gray-400">Equipe ativa</p>
+                    </div>
+                     <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Total de Prazos em Agosto</h3>
+                        <p class="text-4xl font-bold text-gray-300 mt-2">1335</p>
+                        <p class="text-gray-400">Média: 267 por advogado(a)</p>
+                    </div>
+                     <div id="reagendamentos-card" class="kpi-card p-6 rounded-lg text-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gray-300">Reagendamentos</h3>
+                        <p class="text-4xl font-bold text-amber-400 mt-2">146</p>
+                        <p class="text-gray-400">Casos pendentes de Agosto</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-start">
+                    <div class="kpi-card p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Volumetria de Atividades</h3>
+                        <div class="chart-wrapper"><canvas id="chartVolumetria"></canvas></div>
+                    </div>
+                    <div class="kpi-card p-4 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Despachos Realizados</h3>
+                        <p class="text-5xl font-bold text-gray-300 mt-4">30</p>
+                         <hr class="border-gray-600 my-4">
+                        <h3 class="text-xl font-semibold text-gray-300">Sustentações Orais</h3>
+                        <p class="text-5xl font-bold text-gray-300 mt-4">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba: Financeiro -->
+            <div id="financeiro" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Receita Bruta</h3>
+                        <p class="text-3xl font-bold text-blue-400 mt-2">R$ 14.769,99</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Receita Líquida</h3>
+                        <p class="text-3xl font-bold text-green-400 mt-2">R$ 15.454,97</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Despesas</h3>
+                        <p class="text-3xl font-bold text-red-500 mt-2">R$ 46.715,39</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Margem de Lucro</h3>
+                        <p class="text-3xl font-bold text-red-500 mt-2">NEGATIVA</p>
+                    </div>
+                </div>
+                <div class="kpi-card p-6 rounded-lg">
+                     <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Receita Líquida vs. Despesas</h3>
+                     <div class="flex flex-col md:flex-row items-center gap-6">
+                         <div class="chart-wrapper flex-grow w-full md:w-2/3"><canvas id="chartFinanceiro"></canvas></div>
+                         <div class="text-center md:text-left">
+                             <p class="text-gray-400">Resultado Negativo</p>
+                             <p class="text-3xl font-bold text-red-500 mt-1">- R$ 31.260,42</p>
+                             <p class="text-gray-400 text-sm mt-2">Diferença entre Receita Líquida e Despesas.</p>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Aba: Operacional -->
+            <div id="operacional" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Turnover de Estagiários</h3>
+                        <p class="text-5xl font-bold text-amber-400 mt-2">1</p>
+                        <p class="text-gray-400 mt-2">Saída por oportunidade na área de interesse.</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Treinamentos</h3>
+                        <p class="text-5xl font-bold text-gray-300 mt-2">4</p>
+                        <p class="text-gray-400 mt-2">Reuniões semanais de atualização.</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold text-gray-300">Total de Revisões</h3>
+                        <p class="text-5xl font-bold text-gray-300 mt-2">468</p>
+                        <p class="text-gray-400 mt-2">Realizadas pela equipe.</p>
+                    </div>
+                </div>
+                 <div class="kpi-card p-6 rounded-lg mt-8">
+                    <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">SLA's dos Clientes</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center text-gray-300">
+                        <div>
+                            <p class="font-semibold">Relatório Mensal</p>
+                            <p>1º dia útil</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Resposta de E-mail</p>
+                            <p>24 horas</p>
+                        </div>
+                         <div>
+                            <p class="font-semibold">Habilitação em Processos</p>
+                            <p>24 horas</p>
+                        </div>
+                         <div>
+                            <p class="font-semibold">Ajuizamento de Novos Casos</p>
+                            <p>10 dias úteis</p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Aba: Desenvolvimento -->
+            <div id="desenvolvimento" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="kpi-card p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Desenvolvimento de Clientes</h3>
+                        <ul class="text-center space-y-2 text-gray-300 text-lg">
+                            <li>Solfácil</li>
+                            <li>Totvs</li>
+                            <li>JRCA</li>
+                        </ul>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-center mb-4 text-gray-300">Produção de Conteúdo</h3>
+                        <p class="text-center text-gray-300">ARLS compartilha regularmente conteúdos no LinkedIn.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Modal de Justificativa -->
+    <div id="reagendamentos-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50 transition-opacity duration-300">
+        <div class="bg-gray-800 rounded-lg p-8 max-w-2xl w-full relative shadow-lg">
+            <button id="close-modal-btn" class="absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">Justificativa sobre Reagendamentos</h3>
+            <p class="text-gray-300">"Cumpre destacar que, no âmbito da cobrança, o reagendamento de prazos é inerente à atividade, em razão da necessidade de acompanhamento processual (como a citação do devedor) e da indispensável resposta do cliente (atualização do débito, pagamento de custas, entre outros)."</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lógica para alternar entre as abas
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('active'));
+                    contents.forEach(item => item.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            });
+
+             // Lógica do Modal de Reagendamentos
+            const reagendamentosCard = document.getElementById('reagendamentos-card');
+            const modal = document.getElementById('reagendamentos-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            if(reagendamentosCard && modal && closeModalBtn) {
+                reagendamentosCard.addEventListener('click', () => modal.classList.remove('hidden'));
+                closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.classList.add('hidden');
+                });
+            }
+
+            // Configurações globais para os gráficos
+            Chart.defaults.color = '#cbd5e1';
+            Chart.defaults.borderColor = '#4A5568';
+            const formatCurrency = (value) => 'R$ ' + value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            // --- Lógica do Accordion de Indicadores ---
+            const indicatorToggles = document.querySelectorAll('.indicator-toggle');
+            const createdCharts = {};
+
+            const indicatorData = {
+                'chartCitacoes': { title: 'Citações', qtd: 34, valor: 7399.64 },
+                'chartPenhoras': { title: 'Penhoras', qtd: 2, valor: 1825.75 },
+                'chartEncerrados': { title: 'Encerrados', qtd: 15, valor: 13739.58 },
+                'chartDistribuidos': { title: 'Distribuídos', qtd: 51, valor: 3549.11 }
+            };
+
+            const createIndicatorChart = (canvasId, data) => {
+                const ctx = document.getElementById(canvasId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Quantidade', 'Retorno Financeiro'],
+                        datasets: [
+                            {
+                                label: 'Quantidade',
+                                data: [data.qtd, 0],
+                                backgroundColor: '#60A5FA', // blue-400
+                                yAxisID: 'yQtd',
+                            },
+                            {
+                                label: 'Retorno Financeiro',
+                                data: [0, data.valor],
+                                backgroundColor: '#4ADE80', // green-400
+                                yAxisID: 'yValor',
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            yQtd: { type: 'linear', position: 'left', beginAtZero: true, title: { display: true, text: 'Quantidade' } },
+                            yValor: { type: 'linear', position: 'right', beginAtZero: true, title: { display: true, text: 'Valor (R$)'}, ticks: { callback: value => 'R$ ' + (value/1000) + 'k' } }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label === 'Quantidade') return `${label}: ${context.parsed.y}`;
+                                        if (label === 'Retorno Financeiro') return `${label}: ${formatCurrency(context.parsed.y)}`;
+                                        return '';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            indicatorToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const targetId = toggle.dataset.target;
+                    const targetWrapper = document.getElementById(targetId);
+                    const canvasId = targetWrapper.querySelector('canvas').id;
+                    
+                    toggle.querySelector('svg').classList.toggle('rotate-180');
+                    targetWrapper.classList.toggle('hidden');
+
+                    if (!targetWrapper.classList.contains('hidden') && !createdCharts[canvasId]) {
+                        createIndicatorChart(canvasId, indicatorData[canvasId]);
+                        createdCharts[canvasId] = true;
+                    }
+                });
+            });
+
+            // --- Gráfico da Aba "Produtividade" (Volumetria) ---
+            const centerTextPlugin = {
+                id: 'centerText',
+                afterDraw: (chart) => {
+                    if (chart.config.options.plugins.centerText?.display) {
+                        let ctx = chart.ctx;
+                        ctx.save();
+                        const text = chart.config.options.plugins.centerText.text;
+                        const x = (chart.chartArea.left + chart.chartArea.right) / 2;
+                        const y = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+                        ctx.font = 'bold 30px Inter';
+                        ctx.fillStyle = '#cbd5e1';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText(text, x, y);
+                        ctx.restore();
+                    }
+                }
+            };
+            Chart.register(centerTextPlugin);
+
+            const ctxVolumetria = document.getElementById('chartVolumetria').getContext('2d');
+            new Chart(ctxVolumetria, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Prazos', 'Compromissos'],
+                    datasets: [{
+                        data: [597, 738],
+                        backgroundColor: ['#60A5FA', '#A78BFA'], // blue-400 and violet-400
+                        borderColor: '#2D3748',
+                        borderWidth: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: { 
+                        legend: { position: 'bottom' },
+                        centerText: { display: true, text: '1335' }
+                    }
+                }
+            });
+            
+            // --- Gráfico da Aba "Financeiro" ---
+            const ctxFinanceiro = document.getElementById('chartFinanceiro').getContext('2d');
+            new Chart(ctxFinanceiro, {
+                type: 'bar',
+                data: {
+                    labels: ['Despesas', 'Receita Líquida'],
+                    datasets: [{
+                        label: 'Valores em R$',
+                        data: [46715.39, 15454.97],
+                        backgroundColor: ['rgba(239, 68, 68, 0.7)', 'rgba(34, 197, 94, 0.7)'],
+                        borderColor: ['rgba(239, 68, 68, 1)', 'rgba(34, 197, 94, 1)'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, ticks: { callback: value => formatCurrency(value) } } },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: context => formatCurrency(context.parsed.y) } }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
